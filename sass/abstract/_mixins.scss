@@ -1,0 +1,50 @@
+//animation
+@mixin Anime($name, $duration) {
+    animation-name: $name;
+    animation-duration: $duration;
+    
+}
+@mixin clearfix {
+    &::after{
+        content: '';
+        display: table;
+        clear: both;
+    }
+    
+}
+//center
+@mixin AbsCenter{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    
+}
+
+
+//MEDIA QUERY MANAGER
+/* break points for media query
+   phone- :0-600px
+    tab-port- :600-900px
+     tab-land- :900-1200px
+     MINE-GRID
+     1080px
+     960px
+big-desktop: 1800px+     
+*/
+
+@mixin respond($breakpoint){
+    @if $breakpoint == phone{
+        @media (max-width:37.5em){@content}
+    };
+    @if $breakpoint == tab-port{
+        @media (max-width:56.25em){@content}
+    };
+    @if $breakpoint == tab-land{
+        @media (max-width:75em){@content}
+    };
+    @if $breakpoint == big-desk{
+        @media (max-width:120em){@content}
+    }
+   
+}

@@ -1,0 +1,89 @@
+.story{
+    width: 75%;
+    background-color:rgba($color-white, .7);
+    margin: 0 auto;
+
+    padding: 7.4rem;
+    box-shadow: 0 3rem 6rem rgba($color-black, .1);
+    transform: skewX(-14deg);
+    cursor: pointer;
+    &_shape{
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        clip-path: circle(50% at 50% 50%);
+       
+        transform: translateX(-3rem) skewX(14deg);
+        position: relative;
+    }
+    &_img{
+        width: 100%;
+        height: 100%;
+        transform: scale(1.4rem) !important;
+        margin-bottom: 1rem !important;
+    }
+    &_text{
+        font-size: 1.4rem;
+        font-weight: 400;
+        transform: skewX(14deg);
+    }
+    &_caption{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        color: $color-white;
+        text-align: center;
+        font-size: 1.7rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        opacity: 0;
+        transition: all .4s;
+    }
+    &:hover &_caption{
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+    &:hover &_img{
+        transform: scale(1rem);
+        filter: blur(3px) brightness(80%);
+    }
+    @include respond(tab-land){
+     
+        padding: 6rem;
+        width: 100%;
+        &_text{
+            font-size: 1.2rem;
+        }
+       &_shape{
+         margin-top: -3rem;
+       }
+    }
+    @include respond(tab-port){
+     
+        padding: 5rem;
+        width: 120%;
+        &_text{
+            font-size: 1.2rem;
+        }
+       &_shape{
+         margin-top: -3rem;
+       }
+    }
+@include respond(phone){
+    padding: 5rem;
+    margin: 0;
+    width:100%;
+    margin-left: -15.7rem;
+    
+    transform: skewX(0deg);
+    &_text{
+      transform: skewX(0);
+    }
+    &_shape{
+        transform: translateX(-3rem) skewX(0);
+       
+     
+    }
+}
+}

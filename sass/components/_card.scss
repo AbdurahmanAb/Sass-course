@@ -1,0 +1,92 @@
+.container-1{
+    position: relative;  
+    height: 395px;
+    margin-top: 6rem;
+    .card{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: all .4s;
+        &__front{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: $color-white;
+            backface-visibility: hidden;
+           overflow: hidden;     
+           
+            &--img{
+                &--1{
+                background-image: url('../../img/andy-ramos-kr9HOdBFjuk-unsplash.jpg');
+                background-size: cover;
+                height: 200px;
+                background-blend-mode: screen;
+                clip-path: polygon(0 0, 100% 0, 100% 75% , 0 100%);
+                
+            }
+        }
+            &--heading--1{
+                 font-size: 1.7rem;
+                height: 80px;
+                text-align: center;
+                position: absolute;
+                top: 12rem;
+                right: 2rem;
+                font-size: 2.8rem;
+                width: 50%;
+                padding: 1.5rem 3.05rem;
+                .span--1{
+                    background-image: linear-gradient(to right bottom , rgba($color-primary-light,10), rgba($color-primary-light,10));
+                    color: $color-white;
+                }
+                
+            }
+            &--text--1{
+                height: 110px;
+               
+                ul{
+                    list-style: none;
+                    width: 80%;
+                    margin:0 auto;
+                    li{
+                        text-align: center;
+                        padding: 1rem;
+                        &:not(:last-child){
+                            border-bottom: 1px solid #eee;
+                        }
+                    }
+                }
+            }
+
+        }
+        &__back{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: orangered;
+            backface-visibility: hidden;
+           transform: rotateY(180deg); 
+           &--text{
+            &-1{
+               font-size: 4rem;
+               text-align: center;
+               h3{
+                margin: 0 auto;
+            padding-top:15rem;
+               }
+            }
+        }
+        }
+    &:hover{
+        transform: rotateY(180deg);
+    }
+    @include respond(tab-port){
+        .card{
+    &:hover{
+        transform: rotateY(0);
+    }
+    }
+}
+}
+}

@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;   
+    box-sizing: border-box;
+    font-family:'lato', sans-serif;
+}
+html{
+    font-size:62.5% ;
+    //if we make it fixed like px the user cant change font size
+    //so it is bad practice
+    //cause the user could have bad sight and want to increase font size
+    
+ @include respond(tab-land){
+    font-size: 56.25%;
+
+ }
+ @include respond(tab-port){
+    font-size: 50%;
+    
+ }
+ 
+ 
+//    @media (min-width:1080px){
+//     font-size: 53%;
+//    }
+//    @media (max-width:1080px){
+//     font-size: 53%;
+//    }
+//    @media (max-width:1018px){
+//     font-size: 50%;
+//    }
+//    @media (max-width:964px) {
+//     font-size: 49%;
+//    }
+}
+body{
+    margin: 3rem;
+    @include respond(tab-port){
+        margin: 0;
+    }
+    @media (max-width:964px) {
+        margin: 0;
+       }
+}

@@ -1,0 +1,83 @@
+.popup{
+    height: 100vh;
+    width: 100%;
+    background-color: rgba($color-black, .8);
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+    &:target{
+        visibility: visible;
+        opacity: 1;
+    
+    }
+    &:target &_box{
+        opacity: 1;
+        transform: translate(-50%,-50%) scale(1);
+        visibility: visible;
+    }
+ 
+    &_box{
+        @include AbsCenter;
+        width: 80%;
+        background-color: white;
+         transform: translate(-50%,-50%) scale(0);
+        //box shadow
+        box-shadow: 0 2rem 4rem rgba($color-black, .2);
+        display:table;
+        transition: all .8s .2s;  
+        opacity: 0;
+        visibility: hidden;
+        @include respond(tab-land){
+            width: 95%;
+           }
+           @include respond(tab-port){
+            width: 97%
+           }
+
+    }
+    &__left{
+        width: 33.33333%;
+        display: table-cell;
+      vertical-align: middle;
+    }
+&__right{
+    width: 66.6666667%;
+    display: table-cell;
+     vertical-align: middle;  
+     padding: 3rem 5rem;
+     @include respond(phone){
+       
+     }
+   }
+&__img{
+    display: block;
+    width: 100%;
+    height: 25rem;
+   
+
+   
+}
+&__text{
+    font-size:1.4rem;
+    margin-bottom: 4rem;
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid $color-grey-dark;
+    hyphens: auto;
+    @include respond(tab-port){
+  column-count: auto;
+
+       }
+}
+&__close{
+    text-decoration: none;
+    float: right;
+    font-weight: 700;
+    margin-top: -4rem;
+}
+
+}

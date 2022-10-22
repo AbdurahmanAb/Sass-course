@@ -1,0 +1,41 @@
+.about{
+    background-color:$color-grey;
+    padding: 25rem 0;
+    margin-top: -20vh;
+
+}
+.features{
+    padding: 20rem 0;
+    background-image: linear-gradient(to right bottom, 
+    rgba($color-primary, 0.8),
+    rgba($color-primary-light,0.2)), url('../../img/l1.jpg');
+    background-size: cover;
+    transition: all .4s;
+    transform: skewY(-7deg);
+    margin-top: -10rem;
+    & > *{
+        transform: skewY(7deg);
+    }
+}
+.tours{
+    padding: 30rem 0 16rem 0;
+    margin-top: -10rem;
+    background-color: $color-grey;
+    @include respond(tab-port){
+        margin-top: -12rem;
+    }
+    @include respond(phone){
+        margin-top: -16rem;
+    }
+}
+.stories{
+
+    padding: 8rem 15rem 2rem 15rem;
+    position: relative;
+    
+}
+.booking{
+    padding: 15rem 0;
+    background-image:linear-gradient(rgba($color-primary, .8), rgba($color-primary,0.8));
+   
+}

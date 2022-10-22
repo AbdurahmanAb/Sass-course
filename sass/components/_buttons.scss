@@ -1,0 +1,85 @@
+.btn{
+    &,
+    &:link, &:visited{
+        display: inline-block;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        position: relative;
+        font-size: 1.6rem;
+        transition: all 0.4s;
+    
+    }
+   &:hover{
+        transform: translateY(-.3rem);
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+    }
+    &:active{
+        transform: translateY(-.1rem);
+    }
+    &-white{
+        background-color:$color-white;
+        color: $color-black;
+        border-radius: 10rem;
+        margin-top: 3rem;
+       &::after{
+        content:'';
+        background-color: $color-white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        border-radius: 10rem;
+        transition: all 0.4s;
+    }
+     &:hover::after{
+       
+        transform: scale(2);
+        opacity: 0;
+    }
+    @include Anime(btnAnime, 3s);
+    }
+    &-green{
+        background-color:$color-primary;
+        color: $color-white;
+        border-radius: 10rem;
+        margin-top: 1rem;
+        border: none;
+       &::after{
+        content:'';
+        background-color: $color-primary;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        border-radius: 10rem;
+        transition: all 0.4s;
+    }
+     &:hover::after{
+       
+        transform: scale(2);
+        opacity: 0;
+    }
+    
+    }
+    
+
+}
+.btn-text{
+    &:visited,
+    &:link{
+    font-size: 1.8rem;
+    color: $color-primary;
+   display: inline-block;
+    text-decoration: none;
+    border-bottom: 2px solid $color-primary;    
+    padding: 3px;}  
+    &:hover{
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 2rem 30rem rgba($color-black, .18);
+    }
+}
