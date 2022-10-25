@@ -1,6 +1,6 @@
 .container-1{
     position: relative;  
-    height: 395px;
+ height: 398px;
     margin-top: 6rem;
     .card{
         position: absolute;
@@ -73,20 +73,33 @@
                text-align: center;
                h3{
                 margin: 0 auto;
-            padding-top:15rem;
+                padding-top:12rem;
                }
             }
+        }
+        @include respond(tab-port){
+            transform: rotateY(0);
+            position: absolute;
+            top: 46rem;
+            left: 0;
+            height: 47%;
+            margin-bottom: 5rem;
+            clip-path: polygon( 0 25%, 100% 0, 100% 45vh, 0 100%);
         }
         }
     &:hover{
         transform: rotateY(180deg);
     }
     @include respond(tab-port){
-        .card{
+  position: relative;
     &:hover{
         transform: rotateY(0);
-    }
+    
     }
 }
+}
+@include respond(tab-port){
+    height: 54vh;
+    margin-bottom: 8rem;
 }
 }
